@@ -78,7 +78,7 @@ app.post("/delete", asyncHandler(async (req, res) => {
 const setup = async () => {
     const db = await dbPromise;
     await db.migrate();
-    app.listen(5000, () => {
+    app.listen(process.env.PORT || 5000, () => {
         console.log("listening on localhost:5000");
     });
 };
